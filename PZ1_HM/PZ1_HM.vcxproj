@@ -140,10 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="decomposition.cpp" />
-    <ClCompile Include="Header.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="multiply.cpp" />
-    <ClCompile Include="read_matrix.cpp" />
+    <ClCompile Include="read_note.cpp" />
     <ClCompile Include="trans.cpp" />
   </ItemGroup>
   <ItemGroup>
