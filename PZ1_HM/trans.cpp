@@ -1,5 +1,6 @@
 #include "Header.h"
 
-void transposed(int L) {
+void transposed(int L) 
+{
 
 }

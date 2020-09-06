@@ -17,8 +17,7 @@ void decomposition(vector<float> A, vector<int> ai, int n, int m) //Разложение м
 	{
 		for (int k = 0; k < i; k++) 
 		{
-			if 
-			sum = 
+			k % 2 == 0 ? sum -=  
 		}
 	}
 }
