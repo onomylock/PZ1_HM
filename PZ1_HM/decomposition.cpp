@@ -2,7 +2,7 @@
 
 void decomposition(vector<float> A,  vector<int> ai, int n, int m) //Разложение матрицы А
 {
-	vector<float> arr, L;
+	vector<float> di, al, alL, diL;
 	int sign = 1;
 	float sum;
 	/*for (int i = 0; i < n; i++)
@@ -11,9 +11,11 @@ void decomposition(vector<float> A,  vector<int> ai, int n, int m) //Разложение 
 		L[i] = sqrt(sign*());
 	}*/
 
+	for (int i = 0; i < n; i++) di[i] = A[i];
+	for (int i = 0; i < m; i++) al[i] = A[n + i];
 
 
-	L[0] = sqrt(di[0]);
+	diL[0] = sqrt(di[0]);
 
 	for (int i = 1; i < n; i++)
 	{
