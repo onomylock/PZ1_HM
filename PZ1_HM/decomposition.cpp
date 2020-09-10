@@ -3,7 +3,7 @@
 void decomposition(vector<float> A,  vector<int> ai, int n, int m) //Разложение матрицы А
 {
 	vector<float> di, al, alL, diL;
-	float sum;
+	float sum = 0;
 	vector<int> aiL;
 	/*for (int i = 0; i < n; i++)
 	{
@@ -23,7 +23,7 @@ void decomposition(vector<float> A,  vector<int> ai, int n, int m) //Разложение 
 		{
 			for (int k = ai[j]; k < j; k++)
 			{
-				k % 2 == 0? 
+				k % 2 == 0? sum -=
 			}
 		}
 		
