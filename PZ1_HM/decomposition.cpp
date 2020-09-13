@@ -29,11 +29,12 @@ void decomposition(vector<float> A,  vector<int> ai, int n, int m) //Разложение 
 
 	for (int i = 1; i < n; i++)
 	{
-		i % 2 == 0 ? sum -= di[i] : sum += di[i];
-
-		for (int k = 0; k < i; k++) 
+		for (int j = ai[i]; j < ai[i + 1]; j++) 
 		{
-			k % 2 == 0 ? sum -= L[k] : sum += L[k];
+			for (int k = ai[j]; k < j; k++)
+			{
+				k % 2 == 0? sum -=
+			}
 		}
 
 		
