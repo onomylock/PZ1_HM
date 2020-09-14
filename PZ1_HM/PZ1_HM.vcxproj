@@ -141,9 +141,8 @@
   <ItemGroup>
     <ClCompile Include="decomposition.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="multiply.cpp" />
     <ClCompile Include="read_note.cpp" />
-    <ClCompile Include="trans.cpp" />
+    <ClCompile Include="solution.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />

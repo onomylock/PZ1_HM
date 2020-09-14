@@ -18,16 +18,13 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="trans.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="multiply.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="decomposition.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="read_note.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="solution.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
