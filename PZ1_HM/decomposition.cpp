@@ -1,8 +1,8 @@
 #include "Header.h"
 
-void decomposition(vector<float> A,  vector<int> ai, int n, int m) //Разложение матрицы А
+void decomposition(vector<float> &A,  vector<int> ai, int n, int m) //Разложение матрицы А
 {
-	vector<float> di, al, alL, diL;
+	vector<float> di(n), al(m), alL(m), diL(n);
 	int col_j, col_k, kd;
 	float sum_tri = 0, sum_di = 0;
 	
@@ -45,9 +45,8 @@ void decomposition(vector<float> A,  vector<int> ai, int n, int m) //Разложение 
 		sum_di = 0;
 	}
 
-	A.clear();
+
 
 	for (int i = 0; i < n; i++) A[i] = diL[i];
-	for (int i = 0; i < m; i++) A[i + n] = diL[i];
-		
+	for (int i = 0; i < m; i++) A[i + n] = alL[i];
 }

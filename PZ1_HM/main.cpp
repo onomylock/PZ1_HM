@@ -2,9 +2,9 @@
 
 int main() {
 
-	vector<float> A(1000), F(100);
-	vector<int> ai(100);
-	int n, m;
+	vector<float> A(1000), F;
+	vector<int> ai;
+	int n = 0, m = 0;
 
 	input(A, F, ai, n, m);				// Считываем значения из текстовых файлов
 	decomposition(A, ai, n, m);		// Раскладываем матрицу A и находим значения матрицы L
@@ -14,8 +14,10 @@ int main() {
 	
 	ofstream out("output.txt");
 
-	for (auto element : F)
-		out << element << endl;
+	for (int i = 0; i < n; i++)
+	{
+		out << F[i] << endl;
+	}
 	out.close();
 
 	return 0;

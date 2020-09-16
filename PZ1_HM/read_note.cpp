@@ -1,44 +1,53 @@
 #include "Header.h"
 
-int read_info(int n) //Считываем размерность матрицы А
+void read_info(int &n) //Считываем размерность матрицы А
 {
 	ifstream finfo("info.txt");
 	finfo >> n;
 	finfo.close();
-
-	return n;
 }
 
-void read_ai(vector<int> ai, int n, int m) //Считываем портрет матрицы А
+void read_ai(vector<int> &ai, int n, int &m) //Считываем портрет матрицы А
 {
 	ifstream fai("ai.txt");
-	for (int i = 0; i < n + 1; i++) fai >> ai[i];
-	m = ai[n + 1] - 1;
+	float num;
+	for (int i = 0; i < n + 1; i++)
+	{
+		fai >> num;
+		ai.push_back(num);
+	}
+	m = ai[n];
 	fai.close();
 }
 
-void read_di(vector<float> di, int n) //Считываем значения диагонали матрицы А
+void read_di(vector<float> &di, int n) //Считываем значения диагонали матрицы А
 {
 	ifstream fdi("di.txt");
 	for (int i = 0; i < n; i++)	fdi >> di[i];	
 	fdi.close();
 }
 
-void read_al(vector<float> al, int n, int m) //Считываем значения нижнего треугольника матрицы А
+void read_al(vector<float> &al, int n, int m) //Считываем значения нижнего треугольника матрицы А
 {
 	ifstream fal("al.txt");
-	for (int i = m + n; i < 2*m + 1; i++) fal >> al[i];
+	for (int i = n; i < m + n; i++) fal >> al[i];
 	fal.close();
 }
 
-void read_vector(vector<float> vec, int n) //Считываем значения вектора F
+void read_vector(vector<float> &F, int n) //Считываем значения вектора F
 {
 	ifstream fvec("vector.txt");
-	for (int i = 0; i < n; i++) fvec >> vec[i];
+	float num;
+	for (int i = 0; i < n; i++)
+	{
+		fvec >> num;
+		F.push_back(num);
+	}
+	
 	fvec.close();
 }
 
-void input(vector<float> A, vector<float> F, vector<int> ai, int n, int m) //Процедура считывания информации из файлов
+void input(vector<float> &A, vector<float> &F, vector<int> &ai, int &n, int &m) //Процедура считывания информации из файлов
 {
 	read_info(n);
 	read_ai(ai, n, m);
