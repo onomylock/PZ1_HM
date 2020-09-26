@@ -25,18 +25,11 @@ void straight_step(vector<float> L, vector<int> ai, vector<float> &F, int n, int
 	}
 }
 
-void middle_step(vector<float> &Y, int n)		//Средний шаг
+void middle_step(vector<float> &Y, vector<float> E, int n)		//Средний шаг
 {
-	vector<float> Z(n);
-
 	for (int i = 0; i < n; i++)
 	{
-		i % 2 == 0 ? Z[i] = Y[i] : Z[i] = - Y[i];
-	}
-
-	for (int i = 0; i < n; i++)
-	{
-		Y[i] = Z[i];
+		Y[i] = Y[i] * E[i];
 	}
 }
 

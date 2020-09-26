@@ -1,10 +1,10 @@
 #include "Header.h"
 
-void decomposition(vector<float> &A,  vector<int> ai, int n, int m) //Разложение матрицы А
+void decomposition(vector<float> &A,  vector<int> ai, vector<float> &E, int n, int m) //Разложение матрицы А
 {
 	vector<float> di(n), al(m), alL(m), diL(n);
 	int col_j, col_k, kd;
-	float sum_tri = 0, sum_di = 0;
+	float sum_tri = 0, sum_di = 0, eps = 0.1;
 	
 
 	for (int i = 0; i < n; i++) di[i] = A[i];
@@ -41,7 +41,21 @@ void decomposition(vector<float> &A,  vector<int> ai, int n, int m) //Разложение
 
 		}
 
-		i % 2 == 0 ? diL[i] = sqrt(di[i] - sum_di) : diL[i] = sqrt(sum_di - di[i]);
+		diL[i] = sqrt(abs(di[i] - sum_di));
+		//i % 2 == 0 ? diL[i] = sqrt(di[i] - sum_di) : diL[i] = sqrt(sum_di - di[i]);
+		if ((di[i] - sum_di) < 0)
+		{
+			E.push_back(-1);
+		}
+		else if ((di[i] - sum_di) > 0)
+		{
+			E.push_back(1);
+		}
+		else if (abs(di[i] - sum_di) < eps)
+		{
+			cout << "ERROR: division by zero" << endl;
+			exit(1);
+		}
 		sum_di = 0;
 	}
 
