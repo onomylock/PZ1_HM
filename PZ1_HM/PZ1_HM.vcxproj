@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="decomposition.cpp" />
+    <ClCompile Include="gauss.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="read_note.cpp" />
     <ClCompile Include="solution.cpp" />
