@@ -139,11 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="decomposition.cpp" />
-    <ClCompile Include="gauss.cpp" />
+    <ClCompile Include="decomposition_d.cpp" />
+    <ClCompile Include="decomposition_f.cpp" />
+    <ClCompile Include="gauss_d.cpp" />
+    <ClCompile Include="gauss_f.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="read_note.cpp" />
-    <ClCompile Include="solution.cpp" />
+    <ClCompile Include="read_note_d.cpp" />
+    <ClCompile Include="read_note_f.cpp" />
+    <ClCompile Include="solution_d.cpp" />
+    <ClCompile Include="solution_f.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
