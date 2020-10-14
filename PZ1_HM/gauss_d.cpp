@@ -35,7 +35,7 @@ void gauss(vector<double> A, vector<double>& F, vector<int> ai, int n, int m)
 
 	for (int i = 0; i < n; i++)
 	{
-		max = abs(matrix[i][i]); // ищем максимальное значение в столбце i
+		max = abs(matrix[i][i]);
 
 		for (int j = i + 1; j < n; j++)
 		{
@@ -52,7 +52,7 @@ void gauss(vector<double> A, vector<double>& F, vector<int> ai, int n, int m)
 			exit(1);
 		}
 
-		for (int k = 0; k < n; k++) // Перестановка строк
+		for (int k = 0; k < n; k++) 
 		{
 			temp = matrix[i][k];
 			matrix[i][k] = matrix[index][k];
@@ -63,7 +63,7 @@ void gauss(vector<double> A, vector<double>& F, vector<int> ai, int n, int m)
 		F[i] = F[index];
 		F[index] = temp;
 
-		for (int j = i; j < n; j++) // Нормализуем уравнения
+		for (int j = i; j < n; j++) 
 		{
 			temp = matrix[j][i];
 			if (abs(temp) < eps) continue;
@@ -76,7 +76,7 @@ void gauss(vector<double> A, vector<double>& F, vector<int> ai, int n, int m)
 
 			if (i == j) continue;
 
-			for (int k = 0; k < n; k++) // От k-ой строки отнимаем i-ю строку
+			for (int k = 0; k < n; k++) 
 			{
 				matrix[j][k] = matrix[j][k] - matrix[i][k];
 			}
@@ -84,7 +84,7 @@ void gauss(vector<double> A, vector<double>& F, vector<int> ai, int n, int m)
 		}
 	}
 
-	for (int i = n - 1; i >= 0; i--) // Находим вектор X из преобразованной треугольной матрицы
+	for (int i = n - 1; i >= 0; i--) 
 	{
 		X[i] = F[i];
 		for (int j = 0; j < i; j++)

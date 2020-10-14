@@ -8,6 +8,7 @@ using namespace std;
 void input(vector<float> &A, vector<float> &F, vector<int> &ai, int &n, int &m);
 void input(vector<double>& A, vector<double>& F, vector<int>& ai, int& n, int& m);
 void decomposition(vector<float> &A, vector<int> ai, vector<float> &E, int n, int m);
+void decomposition_c(vector<float>& A, vector<int> ai, vector<float>& E, int n, int m);
 void decomposition(vector<double> &A, vector<int> ai, vector<double> &E, int n, int m);
 void straight_step(vector<float> L, vector<int> ai, vector<float> &F, int n, int m);	
 void straight_step(vector<double> L, vector<int> ai, vector<double> &F, int n, int m);

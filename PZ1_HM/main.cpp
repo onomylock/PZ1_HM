@@ -18,6 +18,7 @@ int main() {
 	cout << "Choose calculation precision: " << endl;
 	cout << "1) float precision: " << endl;
 	cout << "2) double precision: " << endl;
+	cout << "3) combination precision: " << endl;
 
 	cin >> precision;
 
@@ -25,19 +26,19 @@ int main() {
 	{
 		case 1:
 		{
-			input(Af, Ff, ai, n, m);		// Считываем значения из текстовых файлов
+			input(Af, Ff, ai, n, m);		
 			
 			if (ch == 1)
 			{
 
-				decomposition(Af, ai, Ef, n, m);		// Раскладываем матрицу A и находим значения матрицы L
-				straight_step(Af, ai, Ff, n, m);		// Прямой ход решения СЛАУ
-				middle_step(Ff, Ef, n);					// Средний ход решения СЛАУ
-				reverse_step(Af, Ff, ai, n, m);		// Обратный ход решения СЛАУ, запись результата в массив F
+				decomposition(Af, ai, Ef, n, m);		
+				straight_step(Af, ai, Ff, n, m);		
+				middle_step(Ff, Ef, n);					
+				reverse_step(Af, Ff, ai, n, m);		
 				
 				ofstream out("output_X.txt");
 
-				out.precision(7);
+				out.precision(8);
 
 				for (int i = 0; i < n; i++)
 				{
@@ -51,7 +52,7 @@ int main() {
 
 				ofstream out("output_G.txt");
 
-				out.precision(7);
+				out.precision(8);
 
 				for (int i = 0; i < n; i++)
 				{
@@ -64,14 +65,14 @@ int main() {
 	
 		case 2:
 		{
-			input(Ad, Fd, ai, n, m);				// Считываем значения из текстовых файлов
+			input(Ad, Fd, ai, n, m);				
 			
 			if (ch == 1)
 			{
-				decomposition(Ad, ai, Ed, n, m);		// Раскладываем матрицу A и находим значения матрицы L
-				straight_step(Ad, ai, Fd, n, m);		// Прямой ход решения СЛАУ
-				middle_step(Fd, Ed, n);					// Средний ход решения СЛАУ
-				reverse_step(Ad, Fd, ai, n, m);		// Обратный ход решения СЛАУ, запись результата в массив F
+				decomposition(Ad, ai, Ed, n, m);		
+				straight_step(Ad, ai, Fd, n, m);		
+				middle_step(Fd, Ed, n);					
+				reverse_step(Ad, Fd, ai, n, m);		
 				
 				ofstream out("output_X.txt");
 
@@ -94,6 +95,44 @@ int main() {
 				for (int i = 0; i < n; i++)
 				{
 					out << Fd[i] << endl;
+				}
+				out.close();
+			}
+			break;
+		}
+		case 3:
+		{
+			input(Af, Ff, ai, n, m);		
+
+			if (ch == 1)
+			{
+
+				decomposition_c(Af, ai, Ef, n, m);		
+				straight_step(Af, ai, Ff, n, m);		
+				middle_step(Ff, Ef, n);					
+				reverse_step(Af, Ff, ai, n, m);		
+
+				ofstream out("output_X.txt");
+
+				out.precision(8);
+
+				for (int i = 0; i < n; i++)
+				{
+					out << Ff[i] << endl;
+				}
+				out.close();
+			}
+			else if (ch == 2)
+			{
+				gauss(Af, Ff, ai, n, m);
+
+				ofstream out("output_G.txt");
+
+				out.precision(8);
+
+				for (int i = 0; i < n; i++)
+				{
+					out << Ff[i] << endl;
 				}
 				out.close();
 			}

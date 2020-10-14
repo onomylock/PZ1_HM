@@ -1,10 +1,10 @@
 #include "Header.h"
 
-void decomposition(vector<double>& A, vector<int> ai, vector<double>& E, int n, int m) //Разложение матрицы А
+void decomposition(vector<double>& A, vector<int> ai, vector<double>& E, int n, int m) 
 {
 	vector<double> di(n), al(m), alL(m), diL(n);
 	int col_j, col_k, kd_i, kd_j;
-	double sum_tri = 0, sum_di = 0, eps = 0.1;
+	double sum_tri = 0, sum_di = 0, eps = 0.1e-15;
 
 
 	for (int i = 0; i < n; i++) di[i] = A[i];
@@ -14,7 +14,7 @@ void decomposition(vector<double>& A, vector<int> ai, vector<double>& E, int n, 
 	{
 		for (int j = ai[i]; j < ai[i + 1]; j++)
 		{
-			col_j = i + j - ai[i + 1];		//col_j - номер столбца для j -го элемента массива alL
+			col_j = i + j - ai[i + 1];		
 			kd_i = i - ai[i + 1] + ai[i];
 			col_k = ai[i];
 			kd_j = col_j - ai[col_j + 1] + ai[col_j];
@@ -32,16 +32,16 @@ void decomposition(vector<double>& A, vector<int> ai, vector<double>& E, int n, 
 			}
 
 			E[col_j] > 0 ? alL[j] = (sum_tri + al[j]) / diL[col_j] : alL[j] = (sum_tri - al[j]) / diL[col_j];
-			E[col_j] > 0 ? sum_di += powf(alL[j], 2) : sum_di -= powf(alL[j], 2);
+			E[col_j] > 0 ? sum_di += pow(alL[j], 2) : sum_di -= pow(alL[j], 2);
 			sum_tri = 0;
 
 		}
 
-		if ((di[i] - sum_di) < 0)
+		if ((di[i] - sum_di) < 0 && abs(di[i] - sum_di) > eps)
 		{
 			E.push_back(-1);
 		}
-		else if ((di[i] - sum_di) > 0)
+		else if ((di[i] - sum_di) > 0 && abs(di[i] - sum_di) > eps)
 		{
 			E.push_back(1);
 		}

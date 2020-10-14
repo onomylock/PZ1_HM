@@ -1,10 +1,10 @@
 #include "Header.h"
 
-void straight_step(vector<float> L, vector<int> ai, vector<float> &F, int n, int m) //Прямой шаг
+void straight_step(vector<float> L, vector<int> ai, vector<float> &F, int n, int m)
 {
 	vector<float> di(n), al(m), Y(n);
-	int col_j;						//col_j - номер столбца для j -го элемента массива al
-	float sum_Y = 0;				//sum_Y - сумма элементов j -й строки
+	int col_j;					
+	float sum_Y = 0;			
 	for (int i = 0; i < n; i++) di[i] = L[i];
 	for (int i = 0; i < m; i++) al[i] = L[i + n];
 
@@ -19,13 +19,14 @@ void straight_step(vector<float> L, vector<int> ai, vector<float> &F, int n, int
 		Y[i] = (F[i] - sum_Y) / di[i];
 		sum_Y = 0;
 	}
+
 	for (int i = 0; i < n; i++)
 	{
 		F[i] = Y[i];
 	}
 }
 
-void middle_step(vector<float> &Y, vector<float> E, int n)		//Средний шаг
+void middle_step(vector<float> &Y, vector<float> E, int n)		
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -33,10 +34,10 @@ void middle_step(vector<float> &Y, vector<float> E, int n)		//Средний шаг
 	}
 }
 
-void reverse_step(vector<float> L, vector<float> &Z, vector<int> ai, int n, int m) //Обратный шаг
+void reverse_step(vector<float> L, vector<float> &Z, vector<int> ai, int n, int m)
 {
 	vector<float> di(n), al(m), X(n), sum_X(n);
-	int st_j;									//st_j - номер строки для j -го элемента массива al
+	int st_j;
 	for (int i = 0; i < n; i++) di[i] = L[i];
 	for (int i = 0; i < m; i++) al[i] = L[i + n];
 

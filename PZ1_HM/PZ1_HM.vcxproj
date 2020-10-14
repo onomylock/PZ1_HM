@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="decomposition_c.cpp" />
     <ClCompile Include="decomposition_d.cpp" />
     <ClCompile Include="decomposition_f.cpp" />
     <ClCompile Include="gauss_d.cpp" />
